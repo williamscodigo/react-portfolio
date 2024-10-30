@@ -1,6 +1,7 @@
 import React from 'react';
 
 export default function Contact() {
+
   return (
     <section>
       <h1 className="text-3xl font-bold mb-4">Contact Me</h1>
