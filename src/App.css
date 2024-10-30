@@ -1,0 +1,6 @@
+#app-wrapper {
+    height: 100vh;
+    height: 100svh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
