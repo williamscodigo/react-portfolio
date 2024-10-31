@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Project({ title, description, link }) {
   return (
     <div className="p-4 border border-gray-300 dark:border-gray-700 rounded-lg">

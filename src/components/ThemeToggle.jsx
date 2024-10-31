@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function ThemeToggle() {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -18,7 +18,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setIsDarkMode(!isDarkMode)}
-      className="p-2 bg-gray-300 dark:bg-gray-700 rounded"
+      className="p-2 bg-gray-700 rounded"
     >
       {isDarkMode ? 'Light Mode' : 'Dark Mode'}
     </button>
