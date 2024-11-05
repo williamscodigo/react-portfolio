@@ -20,7 +20,7 @@ export default function ThemeToggle() {
   return (
     <button
   onClick={() => setIsDarkMode(!isDarkMode)}
-  className="p-2 bg-gray-700 rounded group absolute top-20 right-4 z-50"
+className="p-2 bg-slate-700 dark:bg-gray-800 rounded-full group absolute top-20 right-4 z-2"
 >
   <img
     src={isDarkMode ? LightModeIcon : DarkModeIcon}
@@ -30,3 +30,5 @@ export default function ThemeToggle() {
 </button>
   );
 }
+
+{/* one way to change color to icon when hover, by adding a group to parent button and then using group-hover on img */}
