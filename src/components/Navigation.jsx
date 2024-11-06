@@ -1,22 +1,23 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import HamburgerIcon from '../assets/bars-3.svg';
 import CloseIcon from '../assets/x-mark.svg';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <nav className="relative">
       {/* Hamburger/Close Icon for Small Screens */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="md:hidden p-2 focus:outline-none group z-50 bg-gray-700 rounded-md"
+        className="md:hidden p-2 focus:outline-none group z-50 bg-gray-700 rounded-md border-2 border-transparent hover:border-blue-500 transition-colors duration-300"
       >
         <img
           src={isMenuOpen ? CloseIcon : HamburgerIcon}
           alt={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className="w-6 h-6 transition duration-300 ease-in-out group-hover:filter group-hover:brightness-0 group-hover:invert"
+          className="w-6 h-6 transition duration-300 ease-in-out group-hover:filter brightness-0 invert"
         />
       </button>
 
@@ -37,7 +38,9 @@ export default function Navigation() {
         <li>
           <Link
             to="/"
-            className="block py-2 px-4 hover:bg-blue-500 hover:text-white transition-colors duration-300"
+            className={`block py-2 px-4 transition-colors duration-300 ${
+              location.pathname === '/' ? 'text-blue-500 underline' : 'hover:bg-blue-500 hover:text-white'
+            }`}
             onClick={() => setIsMenuOpen(false)}
           >
             Home
@@ -46,7 +49,9 @@ export default function Navigation() {
         <li>
           <Link
             to="/portfolio"
-            className="block py-2 px-4 hover:bg-blue-500 hover:text-white transition-colors duration-300"
+            className={`block py-2 px-4 transition-colors duration-300 ${
+              location.pathname === '/portfolio' ? 'text-blue-500 underline' : 'hover:bg-blue-500 hover:text-white'
+            }`}
             onClick={() => setIsMenuOpen(false)}
           >
             Portfolio
@@ -54,20 +59,24 @@ export default function Navigation() {
         </li>
         <li>
           <Link
-            to="/about"
-            className="block py-2 px-4 hover:bg-blue-500 hover:text-white transition-colors duration-300"
+            to="/contact"
+            className={`block py-2 px-4 transition-colors duration-300 ${
+              location.pathname === '/contact' ? 'text-blue-500 underline' : 'hover:bg-blue-500 hover:text-white'
+            }`}
             onClick={() => setIsMenuOpen(false)}
           >
-            About
+            Contact
           </Link>
         </li>
         <li>
           <Link
-            to="/contact"
-            className="block py-2 px-4 hover:bg-blue-500 hover:text-white transition-colors duration-300"
+            to="/resume"
+            className={`block py-2 px-4 transition-colors duration-300 ${
+              location.pathname === '/resume' ? 'text-blue-500 underline' : 'hover:bg-blue-500 hover:text-white'
+            }`}
             onClick={() => setIsMenuOpen(false)}
           >
-            Contact
+            Resume
           </Link>
         </li>
       </ul>
