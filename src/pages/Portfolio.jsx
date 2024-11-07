@@ -1,3 +1,4 @@
+import projects from '../data/projects';
 import Project from '../components/Project';
 
 export default function Portfolio() {
@@ -5,9 +6,9 @@ export default function Portfolio() {
     <section>
       <h1 className="text-3xl font-bold mb-4 text-center md:text-left">My Projects</h1>
       <div className="space-y-4">
-        <Project title="Project 1" description="A description of Project 1" link="#" />
-        <Project title="Project 2" description="A description of Project 2" link="#" />
-        <Project title="Project 3" description="A description of Project 3" link="#" />
+        {projects.map((project) => (
+          <Project project={project} />
+        ))}
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import consultationImage from "/public/consultation.jpg";
+import consultationImage from "../assets/consultation.jpg";
 import { IoIosSend } from "react-icons/io";
 
 

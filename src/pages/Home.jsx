@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import HighlightProjects from '../components/HighlightProjects';
 import Skills from '../components/Skills';
-import ContactInfo from '../components/ContactInfo';
 
 export default function Home() {
 
@@ -11,7 +10,7 @@ export default function Home() {
 
   return (
     <>
-    <section className='mb-4'>
+    <section className='my-6'>
       <h1 className="text-3xl font-bold mb-4 text-center md:text-left">Welcome to My Portfolio</h1>
       <p className='mb-6'>This is the home page of my portfolio. Here you can find information about me, my projects, and how to contact me.</p>
       <h2 className="text-center md:text-left text-2xl font-medium mb-4 underline underline-offset-4 decoration-slate-900 dark:decoration-slate-500 decoration-4 opacity-50">About Me</h2>

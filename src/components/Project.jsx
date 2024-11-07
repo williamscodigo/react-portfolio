@@ -1,16 +1,25 @@
-export default function Project({ title, description, link }) {
+export default function Project({ project }) {
   return (
     <div className="p-4 border border-gray-300 dark:border-gray-700 rounded-lg">
-      <h2 className="text-xl font-bold">{title}</h2>
-      <p className="mt-2">{description}</p>
+      <h2 className="text-xl font-bold">Project Name:  {project.title}</h2>
+      <p className="mt-2"><span className="font-bold">Short Description: </span> {project.description}</p>
+      <p className="mt-2"><span className="font-bold">Technologies: </span> {project.technologies.join(', ')}</p>
+      <div className="inline-flex gap-x-6 mt-2">
       <a
-        href={link}
-        className="text-blue-500 dark:text-blue-400 underline mt-2 block"
+        href={project.projectLink}
+        className={`text-blue-500 dark:text-blue-400 ${project.projectLink ? 'hover:cursor-pointer hover:underline' : 'cursor-not-allowed'}`}
         target="_blank"
-        rel="noopener noreferrer"
       >
-        View Project
+        Live Project
       </a>
+      <a
+        href={project.codeLink}
+        className="text-blue-500 dark:text-blue-400 hover:underline hover:cursor-pointer"
+        target="_blank"
+      >
+        Github Code
+      </a>
+      </div>
     </div>
   );
 }
